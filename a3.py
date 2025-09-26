@@ -57,11 +57,11 @@ def explain_pipeline_with_lime(dataset_path, sample_size=5000):
         discretize_continuous=True
     )
 
-    # Pick one test instance to explain
+    
     idx = 0
     instance = X_test[idx]
 
-    # Explain prediction probabilities from pipeline
+    
     exp = explainer.explain_instance(
         data_row=instance,
         predict_fn=pipeline.predict_proba,
@@ -73,3 +73,4 @@ def explain_pipeline_with_lime(dataset_path, sample_size=5000):
 
 # Run function
 explain_pipeline_with_lime(r"DCT_mal.csv", sample_size=5000)
+
